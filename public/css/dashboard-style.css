@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #f2f2f2;
+}
+
+section{
+    display: flex;
+    position: sticky;
+    top:0 ; bottom: 100;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+  }
+
+#active {
+    background-color: #f2f2f2;
+    color: black;
+    width: 110%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
