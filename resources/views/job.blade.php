@@ -50,7 +50,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -67,7 +67,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -84,7 +84,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -102,7 +102,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -119,7 +119,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -137,7 +137,7 @@
                     <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                        <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                       </div>
                       <small class="text-muted">9 mins</small>
                     </div>
@@ -155,7 +155,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -172,7 +172,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>
@@ -189,7 +189,7 @@
                 <p class="card-text">خبرة لأكثر من سنتين ، حاصل على شهادة متوسطة في ...</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="Job-details.html"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
+                    <a href="{{ route("job_details"); }}"> <button class="btn btn-sm btn-outline-secondary">عرض المزيد</button> </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>

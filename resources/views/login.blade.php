@@ -35,7 +35,7 @@
   
       
     </form>
-     <a href="dashboard.html">  <button class="w-100 btn btn-lg btn-primary my-3" type="submit">Sign in</button> </a>
+     <a href="{{ route('dashboard'); }}">  <button class="w-100 btn btn-lg btn-primary my-3" type="submit">Sign in</button> </a>
     
   </main>
 
