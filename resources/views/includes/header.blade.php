@@ -6,16 +6,16 @@
     </a>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="{{ url("/home") }}" class="nav-link px-2 link-light"> الرئيسية</a></li>
-      <li><a href="{{ url("/jobs") }}" class="nav-link px-2 link-secondary" style="border-bottom: 3px solid #007bff;" >الوظائف </a></li>
-      <li><a href="{{ url("/service")}}" class="nav-link px-2 link-light">خدماتنا</a></li>
-      <li><a href="{{ url("/jobs") }}" class="nav-link px-2 link-light">الشركاء</a></li>
+      <li><a href="{{ route('home'); }}" class="nav-link px-2 link-light"> الرئيسية</a></li>
+      <li><a href="{{ route('jobs'); }}" class="nav-link px-2 link-secondary" style="border-bottom: 3px solid #007bff;" >الوظائف </a></li>
+      <li><a href="{{ route('service'); }}" class="nav-link px-2 link-light">خدماتنا</a></li>
+      <li><a href="{{ route('service'); }}" class="nav-link px-2 link-light">الشركاء</a></li>
       <li><a href="#" class="nav-link px-2 link-light">من نحن </a></li>
       <li><a href="#" class="nav-link px-2 link-light">تواصل معنا</a></li>
     </ul>
 
     <div class="col-md-3 text-end">
-      <a href="{{ url("/login") }}"> <button type="button" class="btn btn-outline-light me-2">تسجيل الدخول</button> </a>
-      <a href ="{{ url("/signUp") }}"> <button type="button" class="btn btn-primary me-0" id="showBTN">إنشاء حساب </button> </a>
+      <a href="{{ route('login'); }}"> <button type="button" class="btn btn-outline-light me-2">تسجيل الدخول</button> </a>
+      <a href ="{{ route('signUp'); }}"> <button type="button" class="btn btn-primary me-0" id="showBTN">إنشاء حساب </button> </a>
     </div>
   </header>
