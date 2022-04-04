@@ -14,27 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('user.home');
 })->name('home');
 
 Route::get('/home', function(){
-    return view("home");
+    return view("user.home");
 })->name('home');
 
 Route::get('/jobs', function(){
-    return view("job");
+    return view("user.job");
 })->name('jobs');
 
 Route::get('/services', function(){
-    return view("service");
+    return view("user.service");
 })->name('service');
 
 Route::get('/signUp', function(){
-    return view("signUp");
+    return view("user.signUp");
 })->name('signUp');
 
 Route::get('/login', function(){
-    return view("Login");
+    return view("user.Login");
 })->name('login');
 
 Route::get('/dashboard', function(){
@@ -42,5 +42,5 @@ Route::get('/dashboard', function(){
 })->name('dashboard');
 
 Route::get('/job_details', function(){
-    return view("job_details");
+    return view("user.job_details");
 })->name('job_details');
