@@ -34,7 +34,7 @@
 
     <div class="col-md-3 text-end">
       <a href="{{ route('login'); }}"> <button type="button" class="btn btn-outline-light me-2">تسجيل الدخول</button> </a>
-      <a href ="{{ route('signUp'); }}"> <button type="button" class="btn btn-primary me-0" id="showBTN">إنشاء حساب </button> </a>
+      <a href ="{{ route('create_account'); }}"> <button type="button" class="btn btn-primary me-0" id="showBTN">إنشاء حساب </button> </a>
     </div>
   </header>
 
