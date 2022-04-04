@@ -38,8 +38,12 @@ Route::get('/login', function(){
 })->name('login');
 
 Route::get('/dashboard', function(){
-    return view("dashboard");
+    return view("admin.dashboard");
 })->name('dashboard');
+
+Route::get('/addSkills', function(){
+    return view("admin.addSkills");
+})->name('addSkills');
 
 Route::get('/job_details', function(){
     return view("user.job_details");
