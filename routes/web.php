@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,13 +30,11 @@ Route::get('/services', function(){
     return view("user.service");
 })->name('service');
 
-Route::get('/signUp', function(){
-    return view("user.signUp");
-})->name('signUp');
+Route::get('/create_account', [AuthController::class , 'create_account'])->name('create_account');
+Route::post('/signUp' , [AuthController::class,'signUp'])->name('signUp');
 
-Route::get('/login', function(){
-    return view("user.Login");
-})->name('login');
+Route::get('/login', [AuthController::class ,'show_login'])->name('login');
+Route::post('/do_login', [AuthController::class ,'login'])->name('do_login');
 
 Route::get('/dashboard', function(){
     return view("admin.dashboard");
