@@ -35,24 +35,27 @@ class AuthController extends Controller
 
     public function signUp(Request $request){
         Validator::validate($request->all(),[
+            'full_name'=>['required','min:5'],
             'user_email'=>['required','email','unique:users,email'],
             'user_pass'=>['required','min:5'],
             'confirm_pass'=>['same:user_pass']
 
 
         ],[
+            'full_name.required'=>'password is required',
+            'full_name.min'=>'password should not be more than 5',
             'user_email.unique'=>'there is an email in the table',
             'user_email.required'=>'this field is required',
             'user_email.email'=>'incorrect email format',
             'user_pass.required'=>'password is required',
-            'user_pass.min'=>'password should not be less than 3',
+            'user_pass.min'=>'password should not be more than 5',
             'confirm_pass.same'=>'password dont match',
         ]);
 
         $u=new User();
         $u->name=$request->full_name;
         $u->password=Hash::make($request->user_pass);
-        $u->email=$request->u_email;
+        $u->email=$request->user_email;
         if($u->save())
         return redirect()->route('home')
         ->with(['success'=>'user created successful']);
