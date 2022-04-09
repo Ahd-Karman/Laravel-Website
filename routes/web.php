@@ -30,7 +30,7 @@ Route::get('/services', function(){
     return view("user.service");
 })->name('service');
 
-Route::get('/create_account', [AuthController::class , 'create_account'])->name('create_account');
+Route::get('/signUp', [AuthController::class , 'create_account'])->name('create_account');
 Route::post('/signUp' , [AuthController::class,'signUp'])->name('signUp');
 
 Route::get('/login', [AuthController::class ,'show_login'])->name('login');
