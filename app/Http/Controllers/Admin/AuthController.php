@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,11 +27,21 @@ class AuthController extends Controller
        ],[
            'user_email.required' => 'Error! Can not be null' ,
        ] );
-
+       /*
        $u = new User();
        $u->name = $request->input('user_email');
-       $u->save();
+       $u->save();*/
 
+       if(Auth::attempt(['email'=>$request->email_username,'password'=>$request->user_pass])){
+
+            
+        if(Auth::user()->hasRole('admin'))
+        return redirect()->route('dashboard');
+        else 
+        return redirect()->route('home');
+
+    
+    }
     }
 
     public function signUp(Request $request){
