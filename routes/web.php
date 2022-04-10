@@ -1,8 +1,13 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\JobController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,37 +20,80 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.home');
-})->name('home');
+return view('admin.layout.master');
+});
 
-Route::get('/home', function(){
-    return view("user.home");
-})->name('home');
+/*
 
-Route::get('/jobs', function(){
-    return view("user.job");
-})->name('jobs');
+Route::group([
+	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+],function(){
 
-Route::get('/services', function(){
-    return view("user.service");
-})->name('service');
 
-Route::get('/signUp', [AuthController::class , 'create_account'])->name('create_account');
-Route::post('/signUp' , [AuthController::class,'signUp'])->name('signUp');
+    
+Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
+Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
 
-Route::get('/login', [AuthController::class ,'show_login'])->name('login');
+Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 
-Route::get('/do_login', [AuthController::class ,'login'])->name('do_login');
-Route::post('/do_login', [AuthController::class ,'login'])->name('do_login');
+Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
+Route::get('/new_category',[CategoriesController::class,'create'])->name('new_category');
 
-Route::get('/dashboard', function(){
-    return view("admin.dashboard");
-})->name('dashboard');
+Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 
-Route::get('/addSkills', function(){
-    return view("admin.addSkills");
-})->name('addSkills');
 
-Route::get('/job_details', function(){
-    return view("user.job_details");
-})->name('job_details');
+});
+
+
+
+
+Route::group(['middleware'=>'auth'],function(){
+	Route::group(['middleware'=>'role:admin|super_admin'],function(){
+
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+
+
+
+	});
+	
+	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+	
+});
+
+
+
+Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+
+Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name('generate_roles');
+
+*/
+
+Route::group(['prefix'=>'admin_panel'],function(){
+
+	Route::group(['middleware'=>['auth','role:admin']],function(){
+
+//		Route::get('/list_categories',[CategoriesController::class,'index'])->name('list_categories');
+	//Route::get('/add_category',[CategoriesController::class,'create'])->name('add_category');
+	/*Route::get('/edit_category/{cat_id}',[CategoriesController::class,'edit'])->name('edit_category');
+	Route::get('/toggle_category/{cat_id}',[CategoriesController::class,'toggle'])->name('toggle_category');
+	Route::post('/save_category',[CategoriesController::class,'store'])->name('save_category');
+	Route::post('/update_category/{cat_id}',[CategoriesController::class,'update'])->name('update_category');
+*/
+	});
+	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+	Route::get('/login',[AuthController::class,'showLogin'])->name('login');
+	Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+	Route::get('/list_categories',[JobController::class,'index'])->name('list_categories');
+
+	Route::get('/add_category',[JobController::class,'create'])->name('add_category');
+	Route::get('/edit_category/{cat_id}',[JobController::class,'edit'])->name('edit_category');
+	Route::get('/toggle_category/{cat_id}',[JobController::class,'toggle'])->name('toggle_category');
+	Route::post('/save_category',[JobController::class,'store'])->name('save_category');
+	Route::post('/update_category/{cat_id}',[JobController::class,'update'])->name('update_category');
+});
