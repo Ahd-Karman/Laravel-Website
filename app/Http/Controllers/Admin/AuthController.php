@@ -35,10 +35,10 @@ class AuthController extends Controller
        if(Auth::attempt(['email'=>$request->user_email,'password'=>$request->user_pass])){
 
             
-        if(Auth::user()->hasRole('admin'))
+        //if(Auth::user()->hasRole('admin'))
         return redirect()->route('dashboard');
-        else 
-        return redirect()->route('home');
+        //else 
+        //return redirect()->route('home');
 
     
     }
@@ -73,7 +73,7 @@ class AuthController extends Controller
         $u->password=Hash::make($request->user_pass);
         $u->email=$request->user_email;
         if($u->save()){
-            $u->attachRole('admin');
+           // $u->attachRole('admin');
             return redirect()->route('home')
             ->with(['success'=>'user created successful']);
         }
