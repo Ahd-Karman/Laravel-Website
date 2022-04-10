@@ -33,7 +33,9 @@ Route::get('/services', function(){
 Route::get('/signUp', [AuthController::class , 'create_account'])->name('create_account');
 Route::post('/signUp' , [AuthController::class,'signUp'])->name('signUp');
 
-Route::get('/do_login', [AuthController::class ,'show_login'])->name('login');
+Route::get('/login', [AuthController::class ,'show_login'])->name('login');
+
+Route::get('/do_login', [AuthController::class ,'login'])->name('do_login');
 Route::post('/do_login', [AuthController::class ,'login'])->name('do_login');
 
 Route::get('/dashboard', function(){
