@@ -47,6 +47,8 @@ class AuthController extends Controller
     }
     }
 
+
+    /* Here You'll find signUp Function*/
     public function signUp(Request $request){
         Validator::validate($request->all(),[
             'full_name'=>['required','min:3'],
