@@ -12,7 +12,7 @@
      </div>
      <div class="carousel-inner">
        <div class="carousel-item ">
-         <img src="images/img2.jpg" width="100" height="100" />
+         <img src="../images/img2.jpg" width="100" height="100" />
 
          <div class="container">
            <div class="carousel-caption">
@@ -24,7 +24,7 @@
        </div>
 
        <div class="carousel-item">
-         <img src="images/img1.jpg" width="100" height="100" />
+         <img src="../images/img1.jpg" width="100" height="100" />
 
 
          <div class="container">
@@ -37,7 +37,7 @@
        </div>
 
        <div class="carousel-item active">
-         <img src="images/img3.jpg" width="100" height="100" />
+         <img src="../images/img3.jpg" width="100" height="100" />
 
          <div class="container">
            <div class="carousel-caption text-end">
@@ -74,21 +74,21 @@
      <div class="container marketing py-3 mx-1">
        <div class="row">
          <div class="col-lg-4">
-           <img class="img-thumbnail" src="images/p1.png" width="120" height="120" style="border-radius: 50%;" />
+           <img class="img-thumbnail" src="../images/p1.png" width="120" height="120" style="border-radius: 50%;" />
 
            <h2>مايكروسوفت</h2>
            <p class="fs-5"> الشركة الداعمة لنا في توفير فرص العمل، والراعي الفضي لموقعنا </p>
            <p><a class="btn btn-primary" href="#"> معرفة المزيد </a></p>
          </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-           <img class="img-thumbnail" src="images/p3.png" width="120" height="120" style="border-radius: 50%;" />
+           <img class="img-thumbnail" src="../images/p3.png" width="120" height="120" style="border-radius: 50%;" />
 
            <h2> جوجل </h2>
            <p class="fs-5"> الشركة الداعمة لنا في توفير فرص العمل، والراعي الذهبي لموقعنا </p>
            <p><a class="btn btn-primary" href="#"> معرفة المزيد </a></p>
          </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-           <img class="img-thumbnail" src="images/p2.png" width="120" height="120" style="border-radius: 50%;" />
+           <img class="img-thumbnail" src="../images/p2.png" width="120" height="120" style="border-radius: 50%;" />
 
            <h2>امازون</h2>
            <p class="fs-5"> الشركة الداعمة لنا في توفير فرص العمل، والراعي الماسي لموقعنا </p>
@@ -110,13 +110,13 @@
        <div class="carousel-item active" style="background-color: #f2f2f2; padding-top: 100px; padding-left: 100px;">
          <div class="row mx-5">
            <div class="col card mb-5 py-2  text-center" style="max-width: 18rem;  border-radius: 20px;">
-             <img class="mx-5 py-2" src="images/img2.jpg" width="100" height="100" />
+             <img class="mx-5 py-2" src="../images/img2.jpg" width="100" height="100" />
              <h2 class="display-6 fs-5 fw-bold "> مدير مبيعات </h2>
              <p>خبرة لأكثر من سنتين ، حاصل على شهادة مالهاش حل.</p>
            </div>
 
            <div class="col card mb-5 py-2 mx-5  text-center" style="max-width: 18rem;  border-radius: 20px;">
-             <img class="mx-5 py-2" src="images/img2.jpg" width="100" height="100" />
+             <img class="mx-5 py-2" src="../images/img2.jpg" width="100" height="100" />
              <h2 class="display-6 fs-5 fw-bold "> موظف تسويق </h2>
              <p>خبرة لأكثر من سنتين ، حاصل على شهادة مالهاش حل.</p>
            </div>
@@ -130,13 +130,13 @@
        <div class="carousel-item " style="background-color: #f2f2f2; padding-top: 100px; padding-left: 100px;">
          <div class="row mx-5">
            <div class="col card mb-5 py-2 text-center" style="max-width: 18rem;  border-radius: 20px;">
-             <img class="mx-5 py-2" src="images/img2.jpg" width="100" height="100" />
+             <img class="mx-5 py-2" src="../images/img2.jpg" width="100" height="100" />
              <h2 class="display-6 fs-5 fw-bold "> محلل نظم </h2>
              <p>خبرة لأكثر من سنتين ، حاصل على شهادة مالهاش حل.</p>
            </div>
 
            <div class="col card mb-5 py-2  mx-5 text-center" style="max-width: 18rem;  border-radius: 20px;">
-             <img class="mx-5 py-2  mx-5" src="images/img2.jpg" width="100" height="100" />
+             <img class="mx-5 py-2  mx-5" src="../images/img2.jpg" width="100" height="100" />
              <h2 class="display-6 fs-5 fw-bold "> مدير مشاريع </h2>
              <p>خبرة لأكثر من سنتين ، حاصل على شهادة مالهاش حل.</p>
            </div>
@@ -151,13 +151,13 @@
        <div class="carousel-item " style="background-color: #f2f2f2; padding-top: 100px; padding-left: 100px;">
          <div class="row mx-5">
            <div class="col card mb-5 py-2 text-center" style="max-width: 18rem;  border-radius: 20px;">
-             <img class="mx-5 py-2" src="images/img2.jpg" width="100" height="100" />
+             <img class="mx-5 py-2" src="../images/img2.jpg" width="100" height="100" />
              <h2 class="display-6 fs-5 fw-bold "> مهندس برمجيات</h2>
              <p>خبرة لأكثر من سنتين ، حاصل على شهادة مالهاش حل.</p>
            </div>
 
            <div class="col card mb-5 py-2  mx-5 text-center" style="max-width: 18rem;  border-radius: 20px;">
-             <img class="mx-5 py-2" src="images/img2.jpg" width="100" height="100" />
+             <img class="mx-5 py-2" src="../images/img2.jpg" width="100" height="100" />
              <h2 class="display-6 fs-5 fw-bold "> دعم فني </h2>
              <p>خبرة لأكثر من سنتين ، حاصل على شهادة مالهاش حل.</p>
            </div>

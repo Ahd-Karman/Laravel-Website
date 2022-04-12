@@ -27,6 +27,13 @@ class AuthController extends Controller
         ->with('allUsers',$users);
     }
 
+    public function visitorHome(){
+        if(Auth::check())
+        return redirect()->route($this->checkRole());
+        else 
+        return view('visitor.index');
+    }
+
     public function showLogin(){
         if(Auth::check())
         return redirect()->route($this->checkRole());
@@ -132,8 +139,10 @@ class AuthController extends Controller
     public function logout(){
 
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('index');
 
     }
+
+    
 
 }

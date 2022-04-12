@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
@@ -19,9 +20,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::get('/', function () {
-return view('admin.layout.master');
-});
+Route::get('/',[AuthController::class,'visitorHome'])->name('index');
 
 /*
 
@@ -75,7 +74,7 @@ Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name(
 
 Route::group(['prefix'=>'admin_panel'],function(){
 
-	Route::group(['middleware'=>['auth','role:admin']],function(){
+	Route::group(['middleware'=>'auth'],function(){
 
 //		Route::get('/list_categories',[CategoriesController::class,'index'])->name('list_categories');
 	//Route::get('/add_category',[CategoriesController::class,'create'])->name('add_category');
@@ -84,17 +83,11 @@ Route::group(['prefix'=>'admin_panel'],function(){
 	Route::post('/save_category',[CategoriesController::class,'store'])->name('save_category');
 	Route::post('/update_category/{cat_id}',[CategoriesController::class,'update'])->name('update_category');
 */
-	});
-	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-
+	Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 	Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
 	Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
-
-	Route::get('/login',[AuthController::class,'showLogin'])->name('login');
-
-	Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
-	Route::get('/do_login',[AuthController::class,'login'])->name('do_login');
-	Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
+	
+	
 
 
 	Route::get('/list_categories',[CategoriesController::class,'index'])->name('list_categories');
@@ -105,8 +98,7 @@ Route::group(['prefix'=>'admin_panel'],function(){
 	Route::post('/save_category',[CategoriesController::class,'store'])->name('save_category');
 	Route::post('/update_category/{cat_id}',[CategoriesController::class,'update'])->name('update_category');
 
-
-	/* Job Routes */
+		/* Job Routes */
 	Route::get('/jobs', [JobController::class,'showJobs'])->name('jobs');
 	Route::get('/services', [JobController::class,'showServices'])->name('service');
 	Route::get('/job_details', [JobController::class,'jobDetails'])->name('job_details');
@@ -115,4 +107,17 @@ Route::group(['prefix'=>'admin_panel'],function(){
 	/* User Profile Routes */
 	Route::get('/dashboard', [DashboardController::class,'userDash'])->name('dashboard');
 	Route::get('/addSkills', [DashboardController::class, 'addSkills'])->name('addSkills');
+	});
+
+
+	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+
+	Route::get('/login',[AuthController::class,'showLogin'])->name('login');
+
+	Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+	Route::get('/do_login',[AuthController::class,'login'])->name('do_login');
+
+
+
 });
