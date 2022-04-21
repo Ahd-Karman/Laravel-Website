@@ -158,83 +158,48 @@
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-2">{{ __('content.signin'); }} 👋</h4>
-          <p class="mb-4">Please sign-in to your account and start the adventure</p>
-            
-          @if(session()->has('message')){
-            <p class="alert alert-danger">{{ session()->get('message') }}</p>
-          }
-          @endif
-          @if ($errors->any())
-            @foreach ($errors->all() as $err)
-            <p class="alert alert-danger">{{ $err }}</p>
-                
-            @endforeach
-                
-            @endif
+          <h4 class="mb-2"> Reset Password !</h4>
+          
 
-          <form id="formAuthentication" class="mb-3" action="{{ route('do_login') }}" method="POST" enctype="multipart/form-data">
+          <form id="formAuthentication" class="mb-3" action="{{ route('new_password') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
             <div class="mb-3">
-              <label for="email" class="form-label">{{ __('content.email') }}</label>
-              <input type="text" class="form-control" id="email" name="email_username" placeholder="Enter your email or username" autofocus>
-              @error('email_username')
-              <span class="alert alert-danger">{{ $message }}</span>
-          @enderror
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email or Username</label>
-                <input type="file" class="form-control" id="email" name="profile_image" placeholder="Enter your email or username" autofocus>
+                <label for="email" class="form-label">{{ __('content.email') }}</label>
+                <input type="text" class="form-control" id="email" name="email_username" placeholder="Enter your email or username" autofocus>
               </div>
+
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
-                <label class="form-label" for="password">Password</label>
-                <a href="{{ route('reset_password') }}">
-                  <small>Forgot Password?</small>
-                </a>
+                <label class="form-label" for="password">New Password</label>
               </div>
               <div class="input-group input-group-merge">
                 <input type="password" id="password" class="form-control" name="user_pass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               </div>
             </div>
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember-me">
-                <label class="form-check-label" for="remember-me">
-                  Remember Me
-                </label>
+
+            <div class="mb-3 form-password-toggle">
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="password">Confirm New Password</label>
+                </div>
+                <div class="input-group input-group-merge">
+                  <input type="password" id="password" class="form-control" name="user_pass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                  <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                </div>
               </div>
-            </div>
+
+            
             <div class="mb-3">
-              <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+              <button class="btn btn-primary d-grid w-100" type="submit">Confirm </button>
             </div>
           </form>
 
-          <p class="text-center">
-            <span>New on our platform?</span>
-            <a href="{{ route('create_user') }}">
-              <span>Create an account</span>
-            </a>
-          </p>
+          
 
-          <div class="divider my-4">
-            <div class="divider-text">or</div>
-          </div>
 
-          <div class="d-flex justify-content-center">
-            <a href="javascript:;" class="btn btn-icon btn-label-facebook me-3">
-              <i class="tf-icons bx bxl-facebook"></i>
-            </a>
 
-            <a href="javascript:;" class="btn btn-icon btn-label-google-plus me-3">
-              <i class="tf-icons bx bxl-google-plus"></i>
-            </a>
-
-            <a href="javascript:;" class="btn btn-icon btn-label-twitter">
-              <i class="tf-icons bx bxl-twitter"></i>
-            </a>
-          </div>
+          
         </div>
       </div>
       <!-- /Register -->

@@ -83,9 +83,9 @@ Route::group(['prefix'=>'admin_panel'],function(){
 	Route::post('/save_category',[CategoriesController::class,'store'])->name('save_category');
 	Route::post('/update_category/{cat_id}',[CategoriesController::class,'update'])->name('update_category');
 */
-	Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
-	Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
-	Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
+
+
+
 	
 	
 
@@ -110,6 +110,7 @@ Route::group(['prefix'=>'admin_panel'],function(){
 	});
 
 
+	Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 
@@ -118,6 +119,13 @@ Route::group(['prefix'=>'admin_panel'],function(){
 	Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
 	Route::get('/do_login',[AuthController::class,'login'])->name('do_login');
 
+	Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
+	Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
 
-
+	Route::get('/reset_password',[AuthController::class,'resetPassword'])->name('reset_password');
+	Route::post('/new_password',[AuthController::class,'newPassword'])->name('new_password');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

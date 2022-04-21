@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->double('price');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('id');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
 
         });

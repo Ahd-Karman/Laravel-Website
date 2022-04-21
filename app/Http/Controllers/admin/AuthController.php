@@ -112,8 +112,8 @@ class AuthController extends Controller
         $u->email=$request->u_email;
        
         if($u->save()){
-            $u->attachRole('admin');
-            return redirect()->route('home')
+           // $u->attachRole('admin');
+            return redirect()->route('index')
             ->with(['success'=>'user created successful']);
         }
 
@@ -133,9 +133,32 @@ class AuthController extends Controller
             
         }
     }
+
+    /* Reset Password */
     public function resetPassword(){
+        return view('admin.resetPass');
+    }
+
+    public function newPassword(Request $request){
+        //dd($request->all());
+
+        $user = User::whereEmail($request->email)->first();
+
+        if (count($user) == 0) {
+            return redirect()->back()->with(['error' => 'email is not exist']);
+        }
+
+        $user = Sential::findById($user->id);
+        $reminder = Reminder::exists($user)? :Reminder::create($user) ;
+        $this->sendEmail($user , $reminder->code) ;
+
+        return redirect()->back()->with(['success' => 'Reset code Sent to your Email.']);
+    }
+
+    public function sendEmail($user , $code){
 
     }
+
     public function logout(){
 
         Auth::logout();
